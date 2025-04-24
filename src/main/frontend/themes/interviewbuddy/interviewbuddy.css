@@ -1,0 +1,66 @@
+.chat-box {
+    background-color: var(--lumo-base-color);
+    color: var(--lumo-body-text-color);
+    padding: 1rem;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--lumo-contrast-20pct);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+}
+
+.ai-box {
+    background-color: var(--lumo-primary-color-10pct);
+    color: var(--lumo-body-text-color);
+    padding: 1rem;
+    min-height: 200px;
+    border-left: 4px solid var(--lumo-primary-color);
+    border-radius: 6px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.chat-bubble {
+    max-width: 85%;
+    margin: 0.25rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    word-wrap: break-word;
+    clear: both;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.chat-bubble.left {
+    background-color: var(--lumo-contrast-5pct);
+    text-align: left;
+    float: left;
+    border-top-left-radius: 0;
+}
+
+.chat-bubble.right {
+    background-color: var(--lumo-success-color-10pct);
+    text-align: right;
+    float: right;
+    border-top-right-radius: 0;
+}
+
+.speaker-1 {
+    color: var(--lumo-primary-color);
+    font-weight: 600;
+}
+
+.speaker-2 {
+    color: var(--lumo-success-color);
+    font-weight: 600;
+}
+
+vaadin-tooltip-overlay {
+    background-color: var(--lumo-base-color);
+    color: var(--lumo-body-text-color);
+    border-radius: 6px;
+    padding: 0.5rem;
+    border: 1px solid var(--lumo-contrast-20pct);
+    font-size: 0.85rem;
+}
