@@ -1,5 +1,6 @@
 package com.ai.interviewbuddy.views.mainview;
 
+import com.ai.interviewbuddy.service.PushService;
 import com.vaadin.flow.component.ClientCallable;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
@@ -24,12 +25,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Route("")
-// @Push
+@Push
 @JsModule("./js/mic-stream.js")
 @CssImport("./themes/interviewbuddy/interviewbuddy.css")
 public class MainView extends VerticalLayout {
 
     private final ChatClient chatClient;
+    private final PushService pushService;
 
     private final Div transcriptDisplay = new Div();
     private final Div aiResponseDisplay = new Div();
@@ -56,8 +58,12 @@ public class MainView extends VerticalLayout {
 
 
     @Autowired
-    public MainView(ChatClient chatClient) {
+    public MainView(ChatClient chatClient, PushService pushService) {
         this.chatClient = chatClient;
+        this.pushService = pushService;
+
+        // Register this UI so PushService can update it
+        pushService.register(UI.getCurrent());
 
         interviewType.setItems("Coding", "System Design", "Behavioral", "Case Study");
         roleType.setItems("Backend Engineer", "Frontend Engineer", "Product Manager", "QA", "ML Engineer");

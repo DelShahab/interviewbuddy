@@ -1,6 +1,0 @@
-spring:
-  ai:
-    gemini:
-      api-key: YOUR_GEMINI_API_KEY
-      project-id: YOUR_GCP_PROJECT_ID
-      model: gemini-pro

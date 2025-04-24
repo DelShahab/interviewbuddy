@@ -21,13 +21,12 @@ public class PushService {
         activeUi.set(ui);
     }
 
-
-        public static void sendTranscript(String text) {
+    public static void sendTranscript(String text) {
         UI.getCurrent().access(() -> {
             MainView.transcriptCallback.accept(text);
         });
     }
-    
+
     public void pushTranscript(String line) {
         UI ui = activeUi.get();
         if (ui != null) {
